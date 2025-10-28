@@ -1,6 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
-// Светлая тема (по умолчанию)
 :root,
 body.light {
   --bg-primary: #ffffff;
@@ -11,7 +9,6 @@ body.light {
   --border: #e0e0e0;
 }
 
-// Тёмная тема
 body.dark {
   --bg-primary: #1a1a1a;
   --bg-secondary: #2d2d2d;
@@ -21,7 +18,6 @@ body.dark {
   --border: #404040;
 }
 
-// Применяем переменные
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -29,3 +25,5 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
 }
+
+/*# sourceMappingURL=styles.css.map */

@@ -15,8 +15,16 @@
       }
     </ul>
 
+    <button (click)="toggleTheme()">
+      {{ themeService.theme() === 'light' ? '🌙' : '☀️' }}
+    </button>
+
     <button (click)="toggleLang()">
       {{ languageService.lang() === 'ru' ? 'EN' : 'RU' }}
+    </button>
+
+    <button (click)="toggleRole()">
+      👤 {{ authService.role() === 'admin' ? 'Admin' : 'User' }}
     </button>
   </nav>
 </header>
