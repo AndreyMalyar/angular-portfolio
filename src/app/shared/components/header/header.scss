@@ -1,0 +1,9 @@
+.nav {
+
+  .nav__link {
+    color: blue;
+    &.active{
+      color: darkred;
+    }
+  }
+}

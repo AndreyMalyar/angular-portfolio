@@ -1,1 +1,22 @@
-<p>header works!</p>
+<header>
+  <nav class="nav">
+    <ul class="nav__menu">
+      @for(item of listNav; track $index) {
+      <li class="nav__item" >
+        <a
+          class="nav__link"
+          [routerLink]="item.link"
+          [routerLinkActive]="item.linkActive"
+          [routerLinkActiveOptions]="item.linkOptions ?? {exact: false}"
+        >
+          {{ languageService.translate(item.name) }}
+        </a>
+      </li>
+      }
+    </ul>
+
+    <button (click)="toggleLang()">
+      {{ languageService.lang() === 'ru' ? 'EN' : 'RU' }}
+    </button>
+  </nav>
+</header>
