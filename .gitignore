@@ -45,4 +45,3 @@ Thumbs.db
 # Compiled SCSS
 *.css.map
 src/**/*.css
-!src/styles.css
