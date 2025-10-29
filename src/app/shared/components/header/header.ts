@@ -1,6 +1,8 @@
 import {Component, inject} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Language } from '../../../core/services/language';
+import { Theme } from '../../../core/services/theme';
+import { Auth } from '../../../core/services/auth';
 
 interface NavItem {
   name: string;
@@ -17,6 +19,8 @@ interface NavItem {
 })
 export class Header {
   languageService = inject(Language);
+  themeService = inject(Theme);
+  authService = inject(Auth);
 
   listNav: NavItem[] = [
     {name: 'nav.home', link: '/home', linkActive: 'active', linkOptions: { exact: true } },
@@ -27,6 +31,14 @@ export class Header {
 
   toggleLang() {
     this.languageService.toggleLanguage()
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme()
+  }
+
+  toggleRole() {
+    this.authService.toggleRole()
   }
 
 }
