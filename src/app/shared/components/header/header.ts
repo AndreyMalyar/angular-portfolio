@@ -1,8 +1,9 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Language } from '../../../core/services/language';
 import { Theme } from '../../../core/services/theme';
 import { Auth } from '../../../core/services/auth';
+
 
 interface NavItem {
   name: string;
@@ -10,6 +11,7 @@ interface NavItem {
   linkActive: string;
   linkOptions?: { exact: boolean };
 }
+
 
 @Component({
   selector: 'app-header',
@@ -21,6 +23,9 @@ export class Header {
   languageService = inject(Language);
   themeService = inject(Theme);
   authService = inject(Auth);
+
+  // savedTheme = localStorage.getItem('theme') as ThemeType;
+
 
   listNav: NavItem[] = [
     {name: 'nav.home', link: '/home', linkActive: 'active', linkOptions: { exact: true } },
@@ -42,3 +47,5 @@ export class Header {
   }
 
 }
+
+

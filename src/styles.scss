@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 // Светлая тема (по умолчанию)
 :root,
 body.light {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f5f5f5;
+  --bg-primary: rgb(152, 181, 205);
+  --bg-secondary: rgb(4, 76, 134);
+
   --text-primary: #212121;
   --text-secondary: #757575;
-  --accent: #667eea;
+  --accent: darkred;
   --border: #e0e0e0;
 }
 
@@ -27,5 +29,14 @@ body {
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }

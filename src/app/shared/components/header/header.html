@@ -15,16 +15,27 @@
       }
     </ul>
 
-    <button (click)="toggleTheme()">
-      {{ themeService.theme() === 'light' ? '🌙' : '☀️' }}
-    </button>
+    <div class="nav__controls">
+      <button (click)="toggleLang()">
+        {{ languageService.lang() === 'ru' ? 'EN' : 'RU' }}
+      </button>
 
-    <button (click)="toggleLang()">
-      {{ languageService.lang() === 'ru' ? 'EN' : 'RU' }}
-    </button>
+      <button (click)="toggleRole()">
+        👤 {{ authService.role() === 'admin' ? 'Admin' : 'User' }}
+      </button>
 
-    <button (click)="toggleRole()">
-      👤 {{ authService.role() === 'admin' ? 'Admin' : 'User' }}
-    </button>
+      <!--<button (click)="toggleTheme()">
+        {{ themeService.theme() === 'light' ? '🌙' : '☀️' }}
+      </button>-->
+
+      <input
+        (change)="toggleTheme()"
+        type="checkbox"
+        name="checkbox"
+        id="toggleTheme"
+        class="toggle-theme"
+        [checked]="themeService.theme() === 'dark'"
+      />
+    </div>
   </nav>
 </header>
